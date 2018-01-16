@@ -42,7 +42,6 @@ public class FracCalcv2 { //el main
       if (in[1].contains("/")) {
          preNeg = divide(processedString, processedArray);
          preNeg = sanitizeOutput(preNeg);
- 
       }
       return preNeg;
    }
@@ -181,17 +180,16 @@ public class FracCalcv2 { //el main
             in[arrayIndex] = in[arrayIndex] + "/1";
          }
       }
-      in[1] = " " + in[1] + " ";
       for (String str : in) {
          update += str;
       }
       return update;
    }
    public static String test() {
-      String[] cases = {"10/4 + 2/2", "3 + 4", "2_2/3 - 1_1/3", "3/2 * -2/4", "3/2 / -2/4", "-7/5 / 5/-7", "-1_1/2 + 0"}; //first set of tests
-      String[] answers = {"3_1/2", "7", "1_1/3", "-3/4", "-3", "1_24/25", "-1_1/2"}; //answer key
+      String[] cases = {"10/4 + 2/2", "3 + 4", "2_2/3 - 1_1/3", "3/2 * -2/4", "3/2 / -2/4", "-7/5 / 5/-7", "-1_1/2 + 0", "-38_3/72 + -4_82/37", "2/9456 - 3_435/43556", "2/9456 * 3_435/43556", "2/9456 / 3_435/43556", "2134 + 1/78", "-1_1/2 + -1_1/2"}; //first set of tests
+      String[] answers = {"3_1/2", "7", "1_1/3", "-3/4", "-3", "1_24/25", "-1_1/2", "-44_229/888", "-3_503281/51483192", "43701/68644256", "10889/154963746", "2134_1/78", "-3"}; //answer key
       String[] attempt = new String[cases.length];
-      for (int i = 0; i < 7; i++) {
+      for (int i = 0; i < cases.length; i++) {
          attempt[i] = produceAnswer(cases[i]);
          System.out.println(produceAnswer(cases[i]) + " = " + answers[i]);
       }
